@@ -1,0 +1,166 @@
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(50px);
+    }
+    40% {
+        transform: translateY(50px);
+    }
+    60% {
+        transform: translateX(-50px);
+    }
+    80% {
+        transform: translateY(-50);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+@keyframes slide2 {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-50px);
+    }
+    40% {
+        transform: translateY(-50px);
+    }
+    60% {
+        transform: translateX(50px);
+    }
+    80% {
+        transform: translateY(50);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+@font-face {
+    font-family: 'Font1';
+    src: url('SambaBold.ttf') format('truetype');
+}
+.no-select {
+    user-select: none;
+}
+body {
+    background-color: #000000;
+}
+.background {
+    width: 430px; 
+    transform: translate(-50%, -50%); 
+    left: 50%;
+    height: 480px; 
+    position: absolute;
+    top: 50%;
+}
+.background .shape {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    motion-offset: 100cm;
+}
+.shape:first-child {
+    background: linear-gradient(#124dd6, #23a2f6);
+    left: -80px;
+    top: -80px;
+    animation: slideRight 10s linear infinite;
+}
+.shape:last-child {
+    background: linear-gradient(to right, #ff512f, #f09819); right: -30px;
+    bottom: -80px;
+    animation: slide2 10s linear infinite;
+} 
+form {
+    height: 545px; width: 420px;
+    background-color: rgba(255, 255, 255, 0.13); position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px); border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 40px rgba(8, 7, 16, 0.6); 
+    padding: 50px 35px;
+}
+form {
+    font-family: "Poppins", sans-serif; color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none; border: none;
+}
+form h3 {
+    font-size: 40px; color: #ff512f;
+    font-weight: 500; line-height: 42px;
+    text-align: center;
+    font-family: 'Font1';
+}
+label {
+    display: block;
+    margin-top: 30px; font-size: 16px;
+    font-weight: 500;
+    font-family: 'Font1';
+    font-size: 105%;
+} 
+input {
+    display: block;
+    height: 50px; width: 100%;
+    background-color: rgba(255, 255, 255, 0.07); 
+    border-radius: 3px; font-size: 14px;
+    padding: 10px; margin-top: 8px;
+    font-weight: 300;
+    font-family: 'Font1';
+    color: #d8d8d8;;
+}
+::placeholder {
+    font-family: 'Font1';
+}
+button {
+    margin-top: 58px; width: 100%;
+    background-color: #ffffff;
+    color: #088710;
+    padding: 15px 0;
+    font-size: 18px; font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Font1';
+}
+.social {
+    margin-top: 30px;
+    display: flex;
+    font-family: 'Font1';
+} 
+.social div {
+    background: red; 
+    width: 172px;
+    border-radius: 3px; padding: 5px 10px 10px 5px;
+    background-color: rgba(255, 255, 255, 0.27);
+    color: #eaf0fb; 
+    text-align: center;
+} 
+.social div:hover {
+    background-color: rgba(255, 255, 255, 0.47);
+}    
+.social .fb {
+    margin-left: 25px;
+}
+.social j { 
+    margin-right: 25px;
+}
+.view1 {
+    position: absolute;
+    transform: translate(-50%);
+    top: 92%;
+    left: 50%;
+    border-radius: 10px;
+    padding: 50px 35px;
+    pointer-events: all;
+}
+.logintext {
+    font-family: 'Font1';
+    font-size: 95%;
+    text-align: center;
+    margin: 2%;
+}

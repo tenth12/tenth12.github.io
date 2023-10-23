@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" href="img/12345.ico">
+</head>
+<body>
+    <div class="moving-object"></div>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form id="loginForm">
+        <h3 class="no-select">ล็อกอิน</h3>
+        <label for="username" class="no-select">Username</label>
+        <input required class="no-select" type="text" placeholder="Email or Phone" id="username" onkeydown="handleEnter(event)">
+        <label for="password" class="no-select">Password</label>
+        <input required class="no-select" type="password" placeholder="Password" id="password" onkeydown="handleEnterG(event)">
+        <button type="button" id="loginButton" class="loginButton no-select" onclick="login()">ล็อกอิน</button>
+        
+        <div class="social">
+            <a class="no-select" href="https://www.google.com" target="_parent">
+                <div class="go"><i class="fab fa-google"></i> กูเกิล</div>
+            </a>
+            <br>
+            <a class="no-select" href="https://www.fb.com" target="_parent">
+                <div class="fb"><i class="fab fa-facebook"></i> เฟสบุ๊ค</div>
+            </a>
+        </div>
+        <div class="logintext no-select" id="loginMessage" ></div>
+    </form>
+    <h6>
+        <img src="https://count.getloli.com/get/@tenSaru?theme=asoul" alt="view now" class="view1 no-select" title="view now" onmousedown="return false;">
+    </h6>
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const loginButton = document.getElementById("loginButton");
+        const loginMessage = document.getElementById("loginMessage");
+
+        function resetLoginMessage() {
+            loginMessage.textContent = "";
+        }
+
+        function login() {
+            resetLoginMessage();
+            const enteredUsername = usernameInput.value;
+            const enteredPassword = passwordInput.value;
+
+            const validUsername = /^[A-Za-z0-9]+$/.test(enteredUsername);
+            const validPassword = /^[A-Za-z0-9]+$/.test(enteredPassword);
+
+            if (validUsername && validPassword) {
+                loginMessage.textContent = "ล็อกอินสำเร็จ!";
+                window.location.href = "main.html"
+            } 
+            else {
+                loginMessage.textContent = "ชื่อผู้ใช้และรหัสผ่านต้องประกอบด้วยตัวอักษรและตัวเลขเท่านั้น";
+            }
+        }
+
+        loginButton.addEventListener("click", login);
+    </script>
+    <script>
+        function handleEnter(e) {
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                var inputs = document.getElementsByTagName('input');
+                for (var i = 0; i < inputs.length; i++) {
+                    if (inputs[i] === e.target) {
+                        if (i < inputs.length - 1) {
+                            inputs[i + 1].focus();
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        function handleEnterG(e) {
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                document.getElementById("loginButton").click();
+            }
+        }
+    </script>
+</body>
+</html>
